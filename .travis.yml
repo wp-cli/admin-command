@@ -1,4 +1,5 @@
 sudo: false
+dist: trusty
 
 language: php
 
@@ -30,12 +31,21 @@ matrix:
     - php: 5.6
       env: WP_VERSION=latest
     - php: 5.6
+      env: WP_VERSION=3.7.11
+    - php: 5.6
       env: WP_VERSION=trunk
     - php: 5.3
+      dist: precise
       env: WP_VERSION=latest
 
 before_install:
-  - phpenv config-rm xdebug.ini
+  - |
+    # Remove Xdebug for a huge performance increase:
+    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
+      phpenv config-rm xdebug.ini
+    else
+      echo "xdebug.ini does not exist"
+    fi
 
 install:
   - composer require wp-cli/wp-cli:dev-master
@@ -46,4 +56,4 @@ before_script:
   - composer validate
 
 script:
-  - behat --format progress --strict
+  - bash bin/test.sh
