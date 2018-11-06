@@ -8,10 +8,16 @@ if ( ! class_exists( 'WP_CLI' ) ) {
  * Open /wp-admin/ in a browser.
  */
 $wp_admin = function() {
-	$exec = 'xdg-open';
-	if ( 'DAR' === strtoupper( substr( PHP_OS, 0, 3 ) ) ) {
-		$exec = 'open';
-	}
+    switch ( strtoupper( substr( PHP_OS, 0, 3 ) ) ) {
+        case 'DAR':
+            $exec = 'open';
+            break;
+        case 'WIN':
+            $exec = 'start';
+            break;
+        default:
+            $exec = 'xdg-open';
+    }
 	passthru( $exec . ' ' . escapeshellarg( admin_url() ) );
 };
 WP_CLI::add_command( 'admin', $wp_admin );
