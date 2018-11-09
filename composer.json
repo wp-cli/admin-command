@@ -1,27 +1,52 @@
 {
     "name": "wp-cli/admin-command",
-    "description": "Open /wp-admin/ in a browser.",
     "type": "wp-cli-package",
+    "description": "Open /wp-admin/ in a browser.",
     "homepage": "https://github.com/wp-cli/admin-command",
     "license": "MIT",
-    "authors": [],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "autoload": {
-        "files": [ "command.php" ]
-    },
     "require": {
-        "wp-cli/wp-cli": "*"
+        "wp-cli/wp-cli": "^2"
     },
     "require-dev": {
-        "behat/behat": "~2.5"
+        "wp-cli/wp-cli-tests": "^2.0.7"
+    },
+    "config": {
+        "process-timeout": 7200,
+        "sort-packages": true
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.x-dev"
+            "dev-master": "2.x-dev"
         },
         "commands": [
             "admin"
         ]
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "files": [
+            "admin-command.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "behat": "run-behat-tests",
+        "behat-rerun": "rerun-behat-tests",
+        "lint": "run-linter-tests",
+        "phpcs": "run-phpcs-tests",
+        "phpunit": "run-php-unit-tests",
+        "prepare-tests": "install-package-tests",
+        "test": [
+            "@lint",
+            "@phpcs",
+            "@phpunit",
+            "@behat"
+        ]
+    },
+    "support": {
+        "issues": "https://github.com/wp-cli/admin-command/issues"
     }
 }
