@@ -13,7 +13,7 @@ $wp_admin = function() {
             $exec = 'open';
             break;
         case 'WIN':
-            $exec = 'start';
+            $exec = 'start ""';
             break;
         default:
             $exec = 'xdg-open';
