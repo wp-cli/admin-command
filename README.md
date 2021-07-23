@@ -3,7 +3,7 @@ wp-cli/admin-command
 
 Open /wp-admin/ in a browser.
 
-[![Build Status](https://travis-ci.org/wp-cli/admin-command.svg?branch=master)](https://travis-ci.org/wp-cli/admin-command)
+[![Testing](https://github.com/wp-cli/admin-command/actions/workflows/testing.yml/badge.svg)](https://github.com/wp-cli/admin-command/actions/workflows/testing.yml) [![Build Status](https://travis-ci.org/wp-cli/admin-command.svg?branch=master)](https://travis-ci.org/wp-cli/admin-command)
 
 Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contributing) | [Support](#support)
 
