@@ -13,4 +13,4 @@ jobs:
   test:
     uses: wp-cli/.github/.github/workflows/reusable-testing.yml@main
     secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      inherit: true
