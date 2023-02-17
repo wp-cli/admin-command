@@ -27,9 +27,6 @@
         ]
     },
     "autoload": {
-        "psr-4": {
-            "": "src/"
-        },
         "files": [
             "admin-command.php"
         ]
