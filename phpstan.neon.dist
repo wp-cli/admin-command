@@ -1,0 +1,16 @@
+parameters:
+  level: 9
+  paths:
+    - admin-command.php
+  scanFiles:
+    - vendor/php-stubs/wordpress-stubs/wordpress-stubs.php
+  treatPhpDocTypesAsCertain: false
+  strictRules:
+    uselessCast: true
+    closureUsesThis: true
+    overwriteVariablesWithLoop: true
+    matchingInheritedMethodNames: true
+    numericOperandsInArithmeticOperators: true
+    switchConditionsMatchingType: true
+  ignoreErrors:
+    - identifier: missingType.return
