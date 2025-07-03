@@ -8,7 +8,7 @@
         "wp-cli/wp-cli": "^2"
     },
     "require-dev": {
-        "wp-cli/wp-cli-tests": "^4"
+        "wp-cli/wp-cli-tests": "^5"
     },
     "config": {
         "process-timeout": 7200,
