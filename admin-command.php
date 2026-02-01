@@ -6,6 +6,8 @@ if ( ! class_exists( 'WP_CLI' ) ) {
 
 /**
  * Open /wp-admin/ in a browser.
+ *
+ * When running over SSH, outputs the URL instead of trying to open it.
  */
 function wp_cli_admin_command() {
 	$admin_url = admin_url();
