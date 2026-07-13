@@ -5,7 +5,7 @@
     "homepage": "https://github.com/wp-cli/admin-command",
     "license": "MIT",
     "require": {
-        "wp-cli/wp-cli": "^2"
+        "wp-cli/wp-cli": "^2.13"
     },
     "require-dev": {
         "wp-cli/wp-cli-tests": "^5"
