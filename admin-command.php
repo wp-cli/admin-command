@@ -11,6 +11,9 @@ if ( file_exists( $wpcli_core_autoloader ) ) {
 
 WP_CLI::add_command(
 	'admin',
+	/**
+	 * Open /wp-admin/ in a browser.
+	 */
 	static function () {
 		switch ( strtoupper( substr( PHP_OS, 0, 3 ) ) ) {
 			case 'DAR':
